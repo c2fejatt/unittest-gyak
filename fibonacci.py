@@ -1,6 +1,5 @@
 import unittest
 
-n = int(input("Hanyadik fibonacci számot kéred? "))
 def fibo(n = int):
     prev = 1
     fibonacci = 0
@@ -11,22 +10,22 @@ def fibo(n = int):
         prev = most
     print(fibonacci)
 
-class fibMennyi(unittest.TestCase):
-    def egy(self):
+class TestfibMennyi(unittest.TestCase):
+    def test_egy(self):
         elso = fibo(1)
         self.assertEqual(elso, 0)
-    def nagyobb(self):
+    def test_nagyobb(self):
         nagy = fibo(50)
         self.assertGreaterEqual(nagy, 192168)
-    def kicsi(self):
+    def test_kicsi(self):
         torpiszorp = fibo(5)
         self.assertLessEqual(torpiszorp, 20)
-    def kb(self):
+    def test_kb(self):
         esetleg = fibo(4)
         self.assertAlmostEqual(esetleg, 1)
-    def vane(self):
+    def test_vane(self):
         letezik = fibo(192)
         self.assertIs(letezik)
 
     
-fibo()
+unittest.main()
